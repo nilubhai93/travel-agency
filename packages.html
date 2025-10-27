@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Packages - Fantasia Travels</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">Fantasia Travels</a>
+                </div>
+                <div class="nav-menu">
+                    <div class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="packages.html" class="nav-link active">Packages</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="gallery.html" class="nav-link">Gallery</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </div>
+                </div>
+                <div class="nav-actions">
+                    <button class="btn btn-outline" onclick="openLoginModal()">Login</button>
+                    <button class="btn btn-primary" onclick="openSignupModal()">Sign Up</button>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Packages Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Travel Packages</h1>
+            <p>Discover our carefully curated travel experiences</p>
+        </div>
+    </section>
+
+    <!-- Packages Filter -->
+    <section class="packages-filter">
+        <div class="container">
+            <div class="filter-options">
+                <button class="filter-btn active" data-filter="all">All Packages</button>
+                <button class="filter-btn" data-filter="adventure">Adventure</button>
+                <button class="filter-btn" data-filter="luxury">Luxury</button>
+                <button class="filter-btn" data-filter="family">Family</button>
+                <button class="filter-btn" data-filter="honeymoon">Honeymoon</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Grid -->
+    <section class="packages-grid-section">
+        <div class="container">
+            <div class="packages-grid">
+                <!-- Bali Package -->
+                <div class="package-card" data-category="luxury honeymoon">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bali Luxury Escape">
+                        <div class="package-badge">Popular</div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Bali Luxury Escape</h3>
+                        <p class="package-duration">7 Days / 6 Nights</p>
+                        <p class="package-description">Experience the ultimate luxury in Bali with private villas, spa treatments, and personalized tours.</p>
+                        <div class="package-features">
+                            <span>🏨 5-Star Resort</span>
+                            <span>🍽️ All Meals</span>
+                            <span>🚗 Private Transfers</span>
+                        </div>
+                        <div class="package-price">
+                            <span class="price">$1,899</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Santorini Package -->
+                <div class="package-card" data-category="honeymoon luxury">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Santorini Romantic Getaway">
+                        <div class="package-badge">Best Seller</div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Santorini Romantic Getaway</h3>
+                        <p class="package-duration">5 Days / 4 Nights</p>
+                        <p class="package-description">Romantic escape to Santorini with sunset cruises, wine tasting, and luxury cave hotels.</p>
+                        <div class="package-features">
+                            <span>🍷 Wine Tasting</span>
+                            <span>⛵ Sunset Cruise</span>
+                            <span>💖 Romantic Dinner</span>
+                        </div>
+                        <div class="package-price">
+                            <span class="price">$2,299</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Kenya Safari -->
+                <div class="package-card" data-category="adventure family">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1534008897995-27a23e859048?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Kenya Wildlife Safari">
+                    </div>
+                    <div class="package-content">
+                        <h3>Kenya Wildlife Safari</h3>
+                        <p class="package-duration">10 Days / 9 Nights</p>
+                        <p class="package-description">Embark on an unforgettable safari adventure through Kenya's most famous national parks.</p>
+                        <div class="package-features">
+                            <span>🦁 Game Drives</span>
+                            <span>🏕️ Luxury Tents</span>
+                            <span>👨‍🏫 Expert Guides</span>
+                        </div>
+                        <div class="package-price">
+                            <span class="price">$3,499</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Japan Cultural Tour -->
+                <div class="package-card" data-category="adventure family">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Japan Cultural Tour">
+                    </div>
+                    <div class="package-content">
+                        <h3>Japan Cultural Tour</h3>
+                        <p class="package-duration">12 Days / 11 Nights</p>
+                        <p class="package-description">Discover the rich culture and traditions of Japan from Tokyo to Kyoto.</p>
+                        <div class="package-features">
+                            <span>🏯 Temple Visits</span>
+                            <span>🍣 Cooking Class</span>
+                            <span>🚄 Bullet Train</span>
+                        </div>
+                        <div class="package-price">
+                            <span class="price">$2,899</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Maldives Honeymoon -->
+                <div class="package-card" data-category="luxury honeymoon">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Maldives Paradise">
+                        <div class="package-badge">Luxury</div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Maldives Paradise</h3>
+                        <p class="package-duration">8 Days / 7 Nights</p>
+                        <p class="package-description">Ultimate luxury in overwater bungalows with private pools and crystal clear waters.</p>
+                        <div class="package-features">
+                            <span>🏝️ Overwater Villa</span>
+                            <span>🤿 Snorkeling</span>
+                            <span>🍾 Champagne</span>
+                        </div>
+                        <div class="package-price">
+                            <span class="price">$4,199</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Swiss Alps Adventure -->
+                <div class="package-card" data-category="adventure">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Swiss Alps Adventure">
+                    </div>
+                    <div class="package-content">
+                        <h3>Swiss Alps Adventure</h3>
+                        <p class="package-duration">6 Days / 5 Nights</p>
+                        <p class="package-description">Hiking and adventure in the breathtaking Swiss Alps with stunning mountain views.</p>
+                        <div class="package-features">
+                            <span>⛰️ Mountain Hiking</span>
+                            <span>🚡 Cable Car Rides</span>
+                            <span>🏔️ Glacier Views</span>
+                        </div>
+                        <div class="package-price">
+                            <span class="price">$1,799</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Package Section -->
+    <section class="custom-package">
+        <div class="container">
+            <div class="custom-package-content">
+                <h2>Can't Find What You're Looking For?</h2>
+                <p>We specialize in creating custom travel experiences tailored to your preferences</p>
+                <a href="contact.html" class="btn btn-primary">Design Your Own Package</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Fantasia Travels</h3>
+                    <p>Creating unforgettable travel experiences since 2010.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: info@fantasiatravels.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Fantasia Travels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Login to Your Account</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" name="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" onclick="switchToSignup()">Sign up here</a></p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSignupModal()">&times;</span>
+            <h2>Create Your Account</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" name="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email Address</label>
+                    <input type="email" id="signupEmail" name="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" name="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" onclick="switchToLogin()">Login here</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

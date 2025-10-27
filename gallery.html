@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery - Fantasia Travels</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">Fantasia Travels</a>
+                </div>
+                <div class="nav-menu">
+                    <div class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="packages.html" class="nav-link">Packages</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="gallery.html" class="nav-link active">Gallery</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </div>
+                </div>
+                <div class="nav-actions">
+                    <button class="btn btn-outline" onclick="openLoginModal()">Login</button>
+                    <button class="btn btn-primary" onclick="openSignupModal()">Sign Up</button>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Gallery Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Photo Gallery</h1>
+            <p>Explore breathtaking moments from our travelers' adventures</p>
+        </div>
+    </section>
+
+    <!-- Gallery Filter -->
+    <section class="gallery-filter">
+        <div class="container">
+            <div class="filter-options">
+                <button class="filter-btn active" data-filter="all">All Destinations</button>
+                <button class="filter-btn" data-filter="bali">Bali</button>
+                <button class="filter-btn" data-filter="santorini">Santorini</button>
+                <button class="filter-btn" data-filter="kenya">Kenya</button>
+                <button class="filter-btn" data-filter="japan">Japan</button>
+                <button class="filter-btn" data-filter="maldives">Maldives</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-grid-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <!-- Bali Images -->
+                <div class="gallery-item" data-category="bali">
+                    <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bali Temple">
+                    <div class="gallery-overlay">
+                        <h3>Bali Temple</h3>
+                        <p>Ancient temples surrounded by lush greenery</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="bali">
+                    <img src="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bali Beach">
+                    <div class="gallery-overlay">
+                        <h3>Bali Beach</h3>
+                        <p>Pristine beaches with crystal clear waters</p>
+                    </div>
+                </div>
+
+                <!-- Santorini Images -->
+                <div class="gallery-item" data-category="santorini">
+                    <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Santorini Sunset">
+                    <div class="gallery-overlay">
+                        <h3>Santorini Sunset</h3>
+                        <p>Breathtaking sunsets over the Aegean Sea</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="santorini">
+                    <img src="https://images.unsplash.com/photo-1533090368676-1fd25485db88?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Santorini Streets">
+                    <div class="gallery-overlay">
+                        <h3>Santorini Streets</h3>
+                        <p>Charming white-washed streets and blue domes</p>
+                    </div>
+                </div>
+
+                <!-- Kenya Images -->
+                <div class="gallery-item" data-category="kenya">
+                    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Kenya Safari">
+                    <div class="gallery-overlay">
+                        <h3>Wildlife Safari</h3>
+                        <p>Majestic elephants in their natural habitat</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="kenya">
+                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Kenya Sunset">
+                    <div class="gallery-overlay">
+                        <h3>African Sunset</h3>
+                        <p>Stunning sunsets over the savannah</p>
+                    </div>
+                </div>
+
+                <!-- Japan Images -->
+                <div class="gallery-item" data-category="japan">
+                    <img src="https://images.unsplash.com/photo-1540959733332-8ab49de55db7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Japan Temple">
+                    <div class="gallery-overlay">
+                        <h3>Japanese Temple</h3>
+                        <p>Ancient temples with beautiful gardens</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="japan">
+                    <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Japan Cherry Blossoms">
+                    <div class="gallery-overlay">
+                        <h3>Cherry Blossoms</h3>
+                        <p>Beautiful cherry blossom season in Japan</p>
+                    </div>
+                </div>
+
+                <!-- Maldives Images -->
+                <div class="gallery-item" data-category="maldives">
+                    <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Maldives Resort">
+                    <div class="gallery-overlay">
+                        <h3>Overwater Bungalows</h3>
+                        <p>Luxury accommodations in paradise</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="maldives">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Maldives Beach">
+                    <div class="gallery-overlay">
+                        <h3>Crystal Waters</h3>
+                        <p>Turquoise waters and white sandy beaches</p>
+                    </div>
+                </div>
+
+                <!-- Additional Images -->
+                <div class="gallery-item" data-category="bali">
+                    <img src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bali Rice Terraces">
+                    <div class="gallery-overlay">
+                        <h3>Rice Terraces</h3>
+                        <p>Stunning green rice terraces in Ubud</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="santorini">
+                    <img src="https://images.unsplash.com/photo-1507501336603-6e31db2be093?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Santorini View">
+                    <div class="gallery-overlay">
+                        <h3>Caldera View</h3>
+                        <p>Magnificent views of the Santorini caldera</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gallery Section -->
+    <section class="video-gallery">
+        <div class="container">
+            <h2>Travel Experiences</h2>
+            <p>Watch our travelers' unforgettable moments</p>
+            <div class="video-grid">
+                <div class="video-item">
+                    <div class="video-placeholder">
+                        <div class="play-button">▶</div>
+                        <img src="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Bali Experience">
+                    </div>
+                    <h3>Bali Cultural Journey</h3>
+                </div>
+                <div class="video-item">
+                    <div class="video-placeholder">
+                        <div class="play-button">▶</div>
+                        <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Santorini Experience">
+                    </div>
+                    <h3>Santorini Sunset Magic</h3>
+                </div>
+                <div class="video-item">
+                    <div class="video-placeholder">
+                        <div class="play-button">▶</div>
+                        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Safari Experience">
+                    </div>
+                    <h3>Kenya Safari Adventure</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Fantasia Travels</h3>
+                    <p>Creating unforgettable travel experiences since 2010.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: info@fantasiatravels.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Fantasia Travels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Login to Your Account</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" name="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" onclick="switchToSignup()">Sign up here</a></p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSignupModal()">&times;</span>
+            <h2>Create Your Account</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" name="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email Address</label>
+                    <input type="email" id="signupEmail" name="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" name="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" onclick="switchToLogin()">Login here</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
