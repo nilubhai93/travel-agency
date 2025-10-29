@@ -218,26 +218,28 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Destinations Carousel
+// --- Destinations Carousel Full Working Code ---
+
 class DestinationsCarousel {
     constructor() {
         this.carousel = document.querySelector('.destinations-carousel');
         if (!this.carousel) return;
 
         this.track = this.carousel.querySelector('.carousel-track');
-        this.cards = this.carousel.querySelectorAll('.destination-card');
+        this.cards = Array.from(this.carousel.querySelectorAll('.destination-card'));
         this.prevBtn = this.carousel.querySelector('.carousel-arrow-prev');
         this.nextBtn = this.carousel.querySelector('.carousel-arrow-next');
         this.pagination = this.carousel.querySelector('.carousel-pagination');
-        
+
         this.currentIndex = 0;
-        this.cardWidth = this.cards[0].offsetWidth + 32; // card width + gap
+        this.cardWidth = this.cards[0].offsetWidth + 32; // width + gap
         this.isDragging = false;
         this.startPos = 0;
         this.currentTranslate = 0;
         this.prevTranslate = 0;
         this.animationID = null;
         this.autoSlideInterval = null;
-        
+
         this.init();
     }
 
@@ -249,6 +251,7 @@ class DestinationsCarousel {
     }
 
     createPagination() {
+        this.pagination.innerHTML = '';
         this.cards.forEach((_, index) => {
             const dot = document.createElement('button');
             dot.className = `pagination-dot ${index === 0 ? 'active' : ''}`;
@@ -258,26 +261,24 @@ class DestinationsCarousel {
     }
 
     addEventListeners() {
-        // Arrow buttons
         this.prevBtn.addEventListener('click', () => this.prevSlide());
         this.nextBtn.addEventListener('click', () => this.nextSlide());
 
-        // Touch events
+        // Touch / Mouse drag
         this.track.addEventListener('touchstart', (e) => this.touchStart(e));
         this.track.addEventListener('touchmove', (e) => this.touchMove(e));
         this.track.addEventListener('touchend', () => this.touchEnd());
 
-        // Mouse events
         this.track.addEventListener('mousedown', (e) => this.touchStart(e));
         this.track.addEventListener('mousemove', (e) => this.touchMove(e));
         this.track.addEventListener('mouseup', () => this.touchEnd());
         this.track.addEventListener('mouseleave', () => this.touchEnd());
 
-        // Pause auto-slide on hover
+        // Hover pause
         this.carousel.addEventListener('mouseenter', () => this.stopAutoSlide());
         this.carousel.addEventListener('mouseleave', () => this.startAutoSlide());
 
-        // Window resize
+        // Resize
         window.addEventListener('resize', () => {
             this.cardWidth = this.cards[0].offsetWidth + 32;
             this.updateCarousel();
@@ -289,14 +290,12 @@ class DestinationsCarousel {
         this.startPos = this.getPositionX(e);
         this.track.classList.add('dragging');
         this.stopAutoSlide();
-        
         this.animationID = requestAnimationFrame(this.animation.bind(this));
     }
 
     touchMove(e) {
         if (!this.isDragging) return;
         e.preventDefault();
-        
         const currentPosition = this.getPositionX(e);
         this.currentTranslate = this.prevTranslate + currentPosition - this.startPos;
     }
@@ -306,17 +305,13 @@ class DestinationsCarousel {
         this.isDragging = false;
         this.track.classList.remove('dragging');
         cancelAnimationFrame(this.animationID);
-        
+
         const movedBy = this.currentTranslate - this.prevTranslate;
-        
-        if (movedBy < -100) {
-            this.nextSlide();
-        } else if (movedBy > 100) {
-            this.prevSlide();
-        } else {
-            this.updateCarousel();
-        }
-        
+
+        if (movedBy < -100) this.nextSlide();
+        else if (movedBy > 100) this.prevSlide();
+        else this.updateCarousel();
+
         this.startAutoSlide();
     }
 
@@ -326,9 +321,7 @@ class DestinationsCarousel {
 
     animation() {
         this.setSliderPosition();
-        if (this.isDragging) {
-            requestAnimationFrame(this.animation.bind(this));
-        }
+        if (this.isDragging) requestAnimationFrame(this.animation.bind(this));
     }
 
     setSliderPosition() {
@@ -354,32 +347,31 @@ class DestinationsCarousel {
         this.currentTranslate = -this.currentIndex * this.cardWidth;
         this.prevTranslate = this.currentTranslate;
         this.setSliderPosition();
-        
-        // Update pagination
-        this.pagination.querySelectorAll('.pagination-dot').forEach((dot, index) => {
-            dot.classList.toggle('active', index === this.currentIndex);
-        });
-        
-        // Update active card
-        this.cards.forEach((card, index) => {
-            card.classList.toggle('active', index === this.currentIndex);
-        });
+
+        // Pagination dots
+        const dots = this.pagination.querySelectorAll('.pagination-dot');
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === this.currentIndex));
+
+        // Active card highlight
+        this.cards.forEach((card, i) =>
+            card.classList.toggle('active', i === this.currentIndex)
+        );
     }
 
     startAutoSlide() {
         this.stopAutoSlide();
-        this.autoSlideInterval = setInterval(() => {
-            this.nextSlide();
-        }, 5000); // Change slide every 5 seconds
+        this.autoSlideInterval = setInterval(() => this.nextSlide(), 4000);
     }
 
     stopAutoSlide() {
-        if (this.autoSlideInterval) {
-            clearInterval(this.autoSlideInterval);
-            this.autoSlideInterval = null;
-        }
+        clearInterval(this.autoSlideInterval);
     }
 }
+
+// Initialize after DOM loads
+document.addEventListener('DOMContentLoaded', () => {
+    new DestinationsCarousel();
+});
 
 
 

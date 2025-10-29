@@ -246,45 +246,54 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+
+
     footer {
         padding: 3rem 0 1.5rem;
     }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
     }
-    
+
     .footer-section {
         padding: 1rem 0;
     }
-    
+
+    .footer-section ul li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .footer-section h3::after {
         left: 50%;
         transform: translateX(-50%);
     }
-    
+
     .social-links {
         justify-content: center;
     }
-    
+
     .footer-links {
         gap: 1rem;
     }
-    
+
     .footer-links a {
         padding: 0.5rem 0.75rem;
         font-size: 0.8rem;
     }
-    
+
     .contact-item {
         justify-content: center;
         text-align: center;
         flex-direction: column;
         gap: 0.5rem;
     }
-    
+
     .newsletter-form input,
     .newsletter-form .btn {
         padding: 0.75rem 1rem;
@@ -295,39 +304,39 @@ footer {
     footer {
         padding: 2.5rem 0 1rem;
     }
-    
+
     .footer-content {
         gap: 1.5rem;
     }
-    
+
     .footer-section h3 {
         font-size: 1.3rem;
         margin-bottom: 1rem;
     }
-    
+
     .footer-section h4 {
         font-size: 1.1rem;
         margin-bottom: 1rem;
     }
-    
+
     .social-links {
         gap: 0.75rem;
     }
-    
+
     .social-link {
         width: 38px;
         height: 38px;
     }
-    
+
     .footer-links {
         flex-direction: column;
         gap: 0.5rem;
     }
-    
+
     .footer-links a {
         padding: 0.75rem;
     }
-    
+
     .newsletter-form {
         gap: 0.75rem;
     }
@@ -339,12 +348,12 @@ footer {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
-    
+
     .footer-section:last-child {
         grid-column: 1 / -1;
         text-align: center;
     }
-    
+
     .social-links {
         justify-content: center;
     }
@@ -365,16 +374,16 @@ footer {
         color: black !important;
         border-top: 2px solid #333;
     }
-    
+
     .footer-section h3,
     .footer-section h4 {
         color: black !important;
     }
-    
+
     .footer-section a {
         color: #333 !important;
     }
-    
+
     .social-links,
     .newsletter-form {
         display: none;
