@@ -1,6 +1,7 @@
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+const navMenu = document.querySelector('header .navbar .nav-menu');
+
 
 // Create mobile menu overlay
 const mobileOverlay = document.createElement('div');
@@ -44,6 +45,7 @@ if (hamburger && navMenu) {
     });
 }
 
+// Rest of your existing script.js code remains the same...
 // Modal Functions
 function openLoginModal() {
     document.getElementById('loginModal').style.display = 'block';
